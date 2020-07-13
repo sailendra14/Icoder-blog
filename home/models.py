@@ -9,3 +9,6 @@ class Contact(models.Model):
     phone = models.IntegerField()
     content = models.TextField()
     timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __str__(self):
+        return 'Message from ' + self.name + ' - ' + self.email
