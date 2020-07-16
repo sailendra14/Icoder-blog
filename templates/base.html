@@ -78,36 +78,32 @@
         </div>
         <div class="modal-body">
 
-          <form>
+          <form action="/signup" method='POST'> {% csrf_token %}
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" class="form-control" name="username" id="username" placeholder="Username">
             </div>
             <div class="form-group">
               <label for="fname">First Name: </label>
-              <input type="text" class="form-control" id="fname" placeholder="First Name">
+              <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
             </div>
             <div class="form-group">
               <label for="lname">Last Name: </label>
-              <input type="text" class="form-control" id="lname" placeholder="Last Name">
+              <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
             </div>
             <div class="form-group">
               <label for="email">Email: </label>
-              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
             </div>
              <div class="form-group">
               <label for="password1">Password: </label>
-              <input type="password" class="form-control" id="password1" placeholder="Password">
+              <input type="password" class="form-control" name="password1" id="password1" placeholder="Password">
             </div>
              <div class="form-group">
               <label for="password2">Confirm Password: </label>
-              <input type="password" class="form-control" id="password2" placeholder="Confirm Password">
+              <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password">
             </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Example textarea</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-          <button type="button" class="btn btn-outline-primary">Submit</button>
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
           </form>
         </div>
         <div class="modal-footer">
