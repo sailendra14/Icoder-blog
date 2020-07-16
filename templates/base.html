@@ -40,21 +40,39 @@
         </li>
 
       </ul>
-      <form method="get" action="/search" class="form-inline my-2 my-lg-0 mx-3">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query"
-          id="query">
-        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+      <div class="ml-auto form-inline ">
+        <form method="get" action="/search" class="my-2 my-lg-0 mx-3">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query"
+            id="query">
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 
-      </form>
+        </form>
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav">
+          <li class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" role="button" href="/"id="dropdownMenu2" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+             Welcome {{request.user}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+    
+
+      {% else %}
       <!-- Button trigger Sign up modal -->
       <button type="button" class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#signupModal">
         SignUp
       </button>
-       <!-- Button trigger Sign up modal -->
+      <!-- Button trigger Sign up modal -->
       <button type="button" class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#LoginModal">
         Login
       </button>
+      {% endif %}
     </div>
+  </div>
   </nav>
 
   {% for message in messages  %}
@@ -95,19 +113,21 @@
               <label for="email">Email: </label>
               <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
             </div>
-             <div class="form-group">
+            <div class="form-group">
               <label for="password1">Password: </label>
-              <input type="password" class="form-control" name="password1" id="password1" placeholder="Password" required>
+              <input type="password" class="form-control" name="password1" id="password1" placeholder="Password"
+                required>
             </div>
-             <div class="form-group">
+            <div class="form-group">
               <label for="password2">Confirm Password: </label>
-              <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password" required>
+              <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password"
+                required>
             </div>
-          <button type="submit" class="btn btn-outline-primary">Submit</button>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
           </form>
         </div>
         <div class="modal-footer">
-          
+
         </div>
       </div>
     </div>
@@ -129,17 +149,19 @@
           <form method="POST" action="/login"> {% csrf_token %}
             <div class="form-group">
               <label for="loginusername">Username</label>
-              <input type="text" class="form-control" name="loginusername" id="loginusername" placeholder="Username" required>
+              <input type="text" class="form-control" name="loginusername" id="loginusername" placeholder="Username"
+                required>
             </div>
-             <div class="form-group">
+            <div class="form-group">
               <label for="loginpass">Password: </label>
-              <input type="password" class="form-control" name="loginpass" id="loginpass" placeholder="Enter your Password" required>
+              <input type="password" class="form-control" name="loginpass" id="loginpass"
+                placeholder="Enter your Password" required>
             </div>
-          <button type="submit" class="btn btn-outline-primary">Login</button>
+            <button type="submit" class="btn btn-outline-primary">Login</button>
           </form>
         </div>
         <div class="modal-footer">
-          
+
         </div>
       </div>
     </div>
