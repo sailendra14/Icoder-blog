@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+admin.site.site_header = 'ICODER Admin'
+admin.site.site_title = 'ICODER Admin Panel'
+admin.site.index_title = 'Welcome to Icoder Admin Panel'
 
 urlpatterns = [
     path('', include('home.urls')),
