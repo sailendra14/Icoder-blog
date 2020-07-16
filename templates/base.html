@@ -81,27 +81,27 @@
           <form action="/signup" method='POST'> {% csrf_token %}
             <div class="form-group">
               <label for="username">Username</label>
-              <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+              <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
             </div>
             <div class="form-group">
               <label for="fname">First Name: </label>
-              <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
+              <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" required>
             </div>
             <div class="form-group">
               <label for="lname">Last Name: </label>
-              <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
+              <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name" required>
             </div>
             <div class="form-group">
               <label for="email">Email: </label>
-              <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+              <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
             </div>
              <div class="form-group">
               <label for="password1">Password: </label>
-              <input type="password" class="form-control" name="password1" id="password1" placeholder="Password">
+              <input type="password" class="form-control" name="password1" id="password1" placeholder="Password" required>
             </div>
              <div class="form-group">
               <label for="password2">Confirm Password: </label>
-              <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password">
+              <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password" required>
             </div>
           <button type="submit" class="btn btn-outline-primary">Submit</button>
           </form>
@@ -126,16 +126,16 @@
         </div>
         <div class="modal-body">
 
-          <form>
+          <form method="POST" action="/login"> {% csrf_token %}
             <div class="form-group">
               <label for="loginusername">Username</label>
-              <input type="text" class="form-control" name="loginusername" id="loginusername" placeholder="Username">
+              <input type="text" class="form-control" name="loginusername" id="loginusername" placeholder="Username" required>
             </div>
              <div class="form-group">
-              <label for="pass">Password: </label>
-              <input type="password" class="form-control" id="pass" placeholder="Enter your Password">
+              <label for="loginpass">Password: </label>
+              <input type="password" class="form-control" name="loginpass" id="loginpass" placeholder="Enter your Password" required>
             </div>
-          <button type="button" class="btn btn-outline-primary">Login</button>
+          <button type="submit" class="btn btn-outline-primary">Login</button>
           </form>
         </div>
         <div class="modal-footer">
