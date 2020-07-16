@@ -27,4 +27,4 @@ def postComment(request):
         messages.success(request, 'Your comment has been posted successfully')
         
 
-    return redirect('/blog/{post.slug}')
+    return redirect(f'/blog/{post.slug}')
