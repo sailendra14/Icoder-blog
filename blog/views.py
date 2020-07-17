@@ -4,6 +4,7 @@ from blog.models import Post, BlogComment
 from django.contrib import messages
 from blog.templatetags import extras
 
+
 # Create your views here.
 
 
